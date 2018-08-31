@@ -9,7 +9,7 @@ var index = 0
 start()
 function start(){
     $.ajax({
-    url: 'http://api.douban.com/v2/movie/top250',
+    url: 'https://api.douban.com/v2/movie/top250',
     type: 'GET',
     data: {
         start: index,
