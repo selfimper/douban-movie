@@ -79,6 +79,7 @@ footer {
 footer>div {
     flex: 1;
     text-align: center;
+    background-color: #fff;
 }
 
 footer .active {
