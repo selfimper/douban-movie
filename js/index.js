@@ -6,8 +6,12 @@ $('footer>div').click(function(){
 
 //获取数据
 var index = 0
+var isLoading = false
+$('.loading').show()
 start()
 function start(){
+    if(isLoading) return
+    isLoading = true
     $.ajax({
     url: 'https://api.douban.com/v2/movie/top250',
     type: 'GET',
@@ -22,12 +26,15 @@ function start(){
     index += 20
 }).fail(function(){
     console.log('error')
+}).always(function(){
+    isLoading = false
+    $('.loading').hide()
 })
 }
 
 //当滚动到底部时做出的反应
 $('main').scroll(function(){
-    if($('section').eq(0).height() == $('main').scrollTop() + $('main').height()){
+    if($('section').eq(0).height() -10 <= $('main').scrollTop() + $('main').height()){
         start()
     }
 })
