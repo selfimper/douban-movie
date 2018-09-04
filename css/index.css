@@ -16,24 +16,23 @@ main {
   position: relative;
 }
 
-body {
+body{
+  position: relative;
   font-size: 12px;
-  line-height: 1.2;
-}
-
-main>section {
-  height: calc(100% - 60px);
-  padding: 10px;
   background: #fff;
-  overflow: scroll;
+  fill: #ff5722;
 }
-
-main>section {
+main{
+  height: calc(100vh - 45px);
+}
+main section{
   display: none;
 }
-
-main section:first-child {
+main section:first-child{
   display: block;
+  height: calc(100vh - 45px);
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 
 .item {
@@ -78,13 +77,8 @@ main section:first-child {
 }
 
 @keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
+  0% {transform: rotate(0deg);}
+  100% {transform: rotate(360deg);}
 }
 
 #search {
@@ -124,7 +118,7 @@ section .search-area .button {
 }
 
 footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   height: 45px;
   width: 100%;
@@ -132,7 +126,6 @@ footer {
   background-color: #fff;
   display: flex;
 }
-
 footer>div {
   flex: 1;
   font-size: 12px;
@@ -140,11 +133,9 @@ footer>div {
   color: #666;
   padding-top: 6px;
 }
-
-footer .active {
+footer .active{
   color: #FF5722;
 }
-
-footer>div>span {
+footer>div>span{
   display: block;
 }
